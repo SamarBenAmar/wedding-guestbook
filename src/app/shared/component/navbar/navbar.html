@@ -1,0 +1,47 @@
+<header class="navbar">
+  <nav class="navbar-container">
+
+    <div class="navbar-logo">
+      Samar & Mohamed <br> 17.08.2026
+    </div>
+
+    <div class="navbar-links">
+
+      <a
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Accueil
+      </a>
+
+      <a
+        routerLink="/livre-or"
+        routerLinkActive="active-link"
+      >
+        Laisser un mot
+      </a>
+
+
+    </div>
+
+    <button
+      class="mobile-btn"
+      (click)="toggleMenu()"
+    >
+      <span class="material-symbols-outlined">
+        {{ mobileMenuOpen ? 'close' : 'menu' }}
+      </span>
+    </button>
+
+  </nav>
+
+  <div
+    *ngIf="mobileMenuOpen"
+    class="mobile-menu"
+  >
+    <a routerLink="/">Accueil</a>
+    <a routerLink="/livre-or">Laisser un mot</a>
+
+  </div>
+</header>
