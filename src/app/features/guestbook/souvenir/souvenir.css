@@ -1,0 +1,433 @@
+.souvenir-page {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  padding: 80px 24px;
+
+  background: #fbf9f8;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.decor {
+  position: absolute;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.decor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.decor-left {
+  top: 80px;
+  left: -80px;
+
+  width: 380px;
+  height: 380px;
+
+  transform: rotate(12deg);
+}
+
+.decor-right {
+  bottom: 80px;
+  right: -80px;
+
+  width: 320px;
+  height: 320px;
+
+  transform: rotate(-12deg);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.souvenir-header {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+
+  margin: auto auto 64px auto;
+
+  text-align: center;
+}
+
+.souvenir-header h1 {
+  font-family: 'Alex Brush', serif;
+
+  font-size: 64px;
+  line-height: 1.1;
+
+  color: #735c00;
+
+  margin-bottom: 16px;
+}
+
+.souvenir-header p {
+  font-family: "Maiandra GD", serif;
+  font-size: 20px;
+  line-height: 1.8;
+
+  color: #4d4635;
+
+  font-style: italic;
+}
+
+.header-divider {
+  width: 96px;
+  height: 1px;
+
+  margin: 32px auto 0;
+
+  background: #d0c5af;
+}
+
+/* =========================================
+   FORM CONTAINER
+========================================= */
+
+.souvenir-form-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 48px;
+
+  border-radius: 16px;
+
+  background: white;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 50px rgba(141,163,153,0.08);
+}
+
+.souvenir-form-container::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(212,175,55,0.4),
+      transparent
+    );
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.souvenir-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  margin-left: 4px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  font-size: 13px;
+
+  color: #4d4635;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  border: none;
+  border-bottom: 2px solid rgba(208,197,175,0.4);
+
+  padding: 18px;
+
+  background: #f5f3f3;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #d4af37;
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.form-group textarea {
+  resize: none;
+
+  line-height: 2.2;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 95%,
+      rgba(208,197,175,0.2) 95%
+    );
+
+  background-size: 100% 2.5rem;
+}
+
+.textarea-icon {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  color: rgba(115,92,0,0.2);
+}
+
+/* =========================================
+   UPLOAD
+========================================= */
+
+.upload-box {
+  border: 2px dashed rgba(208,197,175,0.5);
+
+  border-radius: 12px;
+
+  padding: 40px 24px;
+
+  background: rgba(245,243,243,0.5);
+
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  background: #f5f3f3;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 48px;
+
+  color: #b5ccc1;
+
+  margin-bottom: 12px;
+
+  transition: 0.3s;
+}
+
+.upload-box:hover .upload-icon {
+  transform: scale(1.1);
+}
+
+.upload-title {
+  color: #4e635a;
+
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  font-size: 13px;
+}
+
+.upload-subtitle {
+  margin-top: 6px;
+
+  color: #4d4635;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.submit-wrapper {
+  text-align: center;
+}
+
+.submit-wrapper button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 18px 40px;
+
+  background: #d4af37;
+  color: white;
+
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+}
+
+.submit-wrapper button:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.signature-box {
+  margin-top: 48px;
+
+  padding-top: 32px;
+
+  border-top: 1px solid rgba(208,197,175,0.2);
+
+  text-align: center;
+}
+
+.signature-box p {
+  margin-bottom: 16px;
+
+  color: rgba(77,70,53,0.6);
+
+  font-style: italic;
+}
+
+.signature-pad {
+  width: 100%;
+  max-width: 320px;
+  height: 64px;
+
+  margin: auto;
+
+  border: 1px solid rgba(208,197,175,0.3);
+
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signature-pad span {
+  color: rgba(208,197,175,0.5);
+}
+
+/* =========================================
+   POLAROIDS
+========================================= */
+
+.polaroid-section {
+  max-width: 1120px;
+
+  margin: 100px auto 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.polaroid-card {
+  width: 190px;
+  height: 240px;
+
+  padding: 12px 12px 48px;
+
+  background: white;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  transition: 0.3s;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+.polaroid-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.rotate-left {
+  transform: rotate(-3deg);
+}
+
+.rotate-right {
+  transform: rotate(6deg);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .souvenir-header h1 {
+    font-size: 42px;
+  }
+
+  .souvenir-header p {
+    font-size: 18px;
+  }
+
+  .souvenir-form-container {
+    padding: 32px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-wrapper button {
+    width: 100%;
+    justify-content: center;
+  }
+}

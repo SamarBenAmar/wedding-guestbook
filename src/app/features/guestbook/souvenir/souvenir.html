@@ -1,0 +1,223 @@
+<section class="souvenir-page">
+
+  <!-- Decorative Background -->
+  <div class="decor decor-left">
+    <img
+      src="assets/images/lace.png"
+      alt=""
+    />
+  </div>
+
+  <div class="decor decor-right">
+    <img
+      src="assets/images/flowers.png"
+      alt=""
+    />
+  </div>
+
+  <!-- HERO -->
+  <div class="souvenir-header">
+
+    <h1>
+      Laissez-nous un petit souvenir
+    </h1>
+
+    <p>
+      "Votre présence est notre plus beau cadeau,
+      mais vos mots resteront gravés pour toujours."
+    </p>
+
+    <div class="header-divider"></div>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="souvenir-form-container">
+
+    <form
+      [formGroup]="souvenirForm"
+      (ngSubmit)="submit()"
+      class="souvenir-form"
+    >
+
+      <!-- ROW -->
+      <div class="form-row">
+
+        <!-- NAME -->
+        <div class="form-group">
+
+          <label>
+            Nom Complet
+          </label>
+
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Votre nom"
+          />
+
+        </div>
+
+      </div>
+
+      <!-- MESSAGE -->
+      <div class="form-group">
+
+        <label>
+          Votre Message
+        </label>
+
+        <div class="textarea-wrapper">
+
+          <textarea
+            rows="8"
+            formControlName="message"
+            placeholder="Écrivez ici vos vœux les plus chers..."
+          ></textarea>
+
+          <span class="material-symbols-outlined textarea-icon">
+            edit_note
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- UPLOAD PHOTO-->
+      <div class="upload-box">
+
+        <input
+          type="file"
+          id="photo"
+          accept="image/*"
+          hidden
+          (change)="onFileSelected($event)"
+        />
+
+        <label
+          for="photo"
+          class="upload-label"
+        >
+
+          <span class="material-symbols-outlined upload-icon">
+            add_a_photo
+          </span>
+
+          <span class="upload-title">
+
+            {{
+              selectedFileName
+                ? selectedFileName
+                : 'Joindre une petite photo'
+            }}
+
+          </span>
+
+          <span class="upload-subtitle">
+            Format JPG ou PNG (max 5Mo)
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- Audio UPLOAD -->
+      <div class="upload-box">
+
+        <input
+          type="file"
+          id="audio"
+
+          hidden
+
+        />
+
+        <label
+          for="audio"
+          class="upload-label"
+        >
+
+          <span class="material-symbols-outlined upload-icon">
+            mic
+          </span>
+
+          <span class="upload-title">
+
+            {{
+              selectedFileName
+                ? selectedFileName
+                : 'Enregistre un petit message audio'
+            }}
+
+          </span>
+
+          <span class="upload-subtitle">
+            Format Audio (max 5Mo)
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="submit-wrapper">
+
+        <button type="submit">
+
+          Envoyer
+
+          <span class="material-symbols-outlined">
+            send
+          </span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+
+  </div>
+
+  <!-- POLAROIDS -->
+  <section class="polaroid-section">
+
+    <div class="polaroid-card rotate-left">
+
+      <img
+        src="assets/images/we.JPG"
+        alt=""
+      />
+
+    </div>
+
+    <div class="polaroid-card rotate-right">
+
+      <img
+        src="assets/images/wee.JPG"
+        alt=""
+      />
+
+    </div>
+
+    <div class="polaroid-card rotate-left">
+
+      <img
+        src="assets/images/weee.JPG"
+        alt=""
+      />
+
+    </div>
+
+    <div class="polaroid-card rotate-right">
+
+      <img
+        src="assets/images/weeee.JPG"
+        alt=""
+      />
+
+    </div>
+
+  </section>
+
+</section>
