@@ -160,9 +160,11 @@
 
           {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer' }}
 
-          <span class="material-symbols-outlined" *ngIf="!isSubmitting">
-            send
-          </span>
+          @if (!isSubmitting) {
+            <span class="material-symbols-outlined">
+              send
+            </span>
+          }
 
         </button>
 

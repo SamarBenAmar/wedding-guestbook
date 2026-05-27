@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<section class="livre-dor-page">
+
+  <div class="header">
+    <h1>Notre Livre d'Or</h1>
+    <p class="love-quote">
+      "Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction." <br>— Antoine de Saint-Exupéry
+    </p>
+    <!-- Ce message ne s'affichera que si l'utilisateur vient du formulaire Souvenir -->
+    @if (showThankYou) {
+      <div class="thank-you-banner">
+        Merci infiniment pour votre magnifique souvenir ! Il a bien été ajouté au livre d'or. ❤️
+      </div>
+    }
+  </div>
+
+  @if (isLoading) {
+    <div class="loading-state">
+      <span class="material-symbols-outlined">hourglass_empty</span>
+      <p>Chargement des jolis souvenirs...</p>
+    </div>
+  } @else {
+    <div class="entries-grid">
+      <div class="entry-card" *ngFor="let entry of entries">
+
+        @if (entry.photoUrl) {
+          <div class="entry-photo">
+            <img [src]="entry.photoUrl" alt="{{ entry.name }}" />
+          </div>
+        }
+
+        <div class="entry-content">
+          <h3>{{ entry.name }}</h3>
+          <p class="message">"{{ entry.message }}"</p>
+
+          @if (entry.audioUrl) {
+            <div class="entry-audio">
+              <audio controls [src]="entry.audioUrl"></audio>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  }
+
+</section>
+<app-footer></app-footer>

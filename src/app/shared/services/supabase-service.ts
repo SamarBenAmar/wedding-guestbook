@@ -45,4 +45,15 @@ export class SupabaseService {
       throw e;
     }
   }
+
+  // Méthode pour récupérer les messages du livre d'or
+  async getGuestbookEntries() {
+    const { data, error } = await this.supabase
+      .from('Guests')
+      .select('*')
+      .order('id', { ascending: false }); // Vous pouvez remplacer 'id' par 'created_at' selon votre schéma
+
+    if (error) throw error;
+    return data;
+  }
 }

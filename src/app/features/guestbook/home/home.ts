@@ -23,4 +23,8 @@ export class Home {
   addSouvenir(): void {
     this.router.navigate(['/guestbook/add-souvenir']);
   }
+
+  getLivreDor(): void {
+    this.router.navigate(['/guestbook/livre-dor']);
+  }
 }

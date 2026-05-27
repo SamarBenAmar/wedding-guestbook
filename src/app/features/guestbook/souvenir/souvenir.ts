@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../../../shared/component/navbar/navbar';
@@ -30,7 +31,8 @@ export class Souvenir {
     private fb: FormBuilder,
     private audioService: AudioService,
     private supabaseService: SupabaseService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ) {
     this.souvenirForm = this.fb.group({
       name: ['', Validators.required],
@@ -114,9 +116,8 @@ export class Souvenir {
         audioUrl: audioUrl
       });
 
-      this.souvenirForm.reset();
-      this.selectedFileName = '';
-      alert('Merci pour votre magnifique souvenir !');
+      // On redirige vers le composant LivreDor en passant une information dans l'état de la navigation
+      this.router.navigate(['/guestbook/livre-dor'], { state: { showThankYou: true } });
     } catch (error) {
       console.error('Erreur lors de l\'envoi du formulaire:', error);
       alert('Oups, une erreur est survenue lors de l\'envoi. Veuillez réessayer.');
