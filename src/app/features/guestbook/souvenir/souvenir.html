@@ -4,14 +4,14 @@
   <!-- Decorative Background -->
   <div class="decor decor-left">
     <img
-      src="assets/images/lace.png"
+      src="assets/images/fl2_c1.png"
       alt=""
     />
   </div>
 
   <div class="decor decor-right">
     <img
-      src="assets/images/flowers.png"
+      src="assets/images/fl2_c3.png"
       alt=""
     />
   </div>
@@ -57,6 +57,12 @@
             placeholder="Votre nom"
           />
 
+          @if (souvenirForm.get('name')?.invalid && souvenirForm.get('name')?.touched) {
+            <span style="color: #d32f2f; font-size: 0.85rem; margin-top: 4px; display: block;">
+              Veuillez renseigner votre nom.
+            </span>
+          }
+
         </div>
 
       </div>
@@ -81,6 +87,12 @@
           </span>
 
         </div>
+
+        @if (souvenirForm.get('message')?.invalid && souvenirForm.get('message')?.touched) {
+          <span style="color: #d32f2f; font-size: 0.85rem; margin-top: 4px; display: block;">
+            Veuillez écrire un petit message.
+          </span>
+        }
 
       </div>
 
@@ -156,7 +168,13 @@
       <!-- SUBMIT -->
       <div class="submit-wrapper">
 
-        <button type="submit" [disabled]="isSubmitting || isRecording">
+        @if (souvenirForm.invalid && souvenirForm.touched) {
+          <div style="color: #d32f2f; margin-bottom: 1rem; font-size: 0.9rem; text-align: center;">
+            Veuillez remplir les champs obligatoires (Nom et Message).
+          </div>
+        }
+
+        <button type="submit" [disabled]="isSubmitting">
 
           {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer' }}
 

@@ -16,7 +16,7 @@
 
 .decor {
   position: absolute;
-  opacity: 0.08;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -27,23 +27,23 @@
 }
 
 .decor-left {
-  top: 80px;
+  top: -20px;
   left: -80px;
 
   width: 380px;
   height: 380px;
 
-  transform: rotate(12deg);
+
 }
 
 .decor-right {
-  bottom: 80px;
-  right: -80px;
+  bottom: -15px;
+  right: 0px;
 
   width: 320px;
   height: 320px;
 
-  transform: rotate(-12deg);
+
 }
 
 /* =========================================

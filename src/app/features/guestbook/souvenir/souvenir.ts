@@ -89,6 +89,11 @@ export class Souvenir {
   }
 
   async submit() {
+    // On arrête l'enregistrement si l'utilisateur a oublié de le faire
+    if (this.isRecording) {
+      await this.toggleRecording();
+    }
+
     if (this.souvenirForm.invalid) {
       this.souvenirForm.markAllAsTouched();
       return;
