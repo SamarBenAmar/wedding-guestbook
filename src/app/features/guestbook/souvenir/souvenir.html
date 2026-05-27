@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <section class="souvenir-page">
 
   <!-- Decorative Background -->
@@ -124,29 +125,22 @@
       <!-- Audio UPLOAD -->
       <div class="upload-box">
 
-        <input
-          type="file"
-          id="audio"
-
-          hidden
-
-        />
-
-        <label
-          for="audio"
+        <div
           class="upload-label"
+          (click)="toggleRecording()"
+          style="cursor: pointer;"
         >
 
-          <span class="material-symbols-outlined upload-icon">
+          <span class="material-symbols-outlined upload-icon" [style.color]="isRecording ? 'red' : ''">
             mic
           </span>
 
           <span class="upload-title">
 
             {{
-              selectedFileName
-                ? selectedFileName
-                : 'Enregistre un petit message audio'
+              isRecording
+                ? '⏺ Enregistrement en cours...'
+                : ( audio ? 'Enregistrement terminé (cliquez pour refaire)' : 'Enregistre un petit message audio')
             }}
 
           </span>
@@ -155,18 +149,18 @@
             Format Audio (max 5Mo)
           </span>
 
-        </label>
+        </div>
 
       </div>
 
       <!-- SUBMIT -->
       <div class="submit-wrapper">
 
-        <button type="submit">
+        <button type="submit" [disabled]="isSubmitting || isRecording">
 
-          Envoyer
+          {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer' }}
 
-          <span class="material-symbols-outlined">
+          <span class="material-symbols-outlined" *ngIf="!isSubmitting">
             send
           </span>
 
@@ -221,3 +215,4 @@
   </section>
 
 </section>
+<app-footer />

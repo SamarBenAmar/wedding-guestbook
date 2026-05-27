@@ -29,7 +29,7 @@
 
       <div class="hero-actions">
 
-        <button class="primary-btn">
+        <button class="primary-btn" (click)="addSouvenir()">
           Laisser un souvenir
         </button>
 
@@ -111,8 +111,7 @@
         </span>
 
           <p>
-            "L'amour ne consiste pas à se regarder l'un l'autre,
-            mais à regarder ensemble dans la même direction."
+            "L’amour n'a pas besoin d'être parfait, <br> il a juste besoin d'être vrai."
           </p>
 
         </div>
@@ -150,7 +149,7 @@
             ou un moment de cette journée.
           </p>
 
-          <button>
+        <button (click)="addSouvenir()">
             C'est parti !
           </button>
 
